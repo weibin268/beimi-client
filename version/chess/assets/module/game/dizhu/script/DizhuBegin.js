@@ -168,6 +168,8 @@ cc.Class({
      */
     joinroom_event:function(data , context){
 
+        debugger
+
         if(data.cardroom == true && context.inviteplayer!=null){
             let script = context.invite.getComponent("BeiMiQR")
             script.init(data.roomid);
