@@ -170,7 +170,7 @@ cc.Class({
      */
     joinroom_event:function(data , context){
 
-        if(data.cardroom == true && context.inviteplayer!=null){
+        if(data.cardroom == true && context.inviteplayer!=null && context.invite){
             let script = context.invite.getComponent("BeiMiQR")
             script.init(data.roomid);
             context.invite.parent = context.root() ;
