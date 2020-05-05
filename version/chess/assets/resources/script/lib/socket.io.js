@@ -36,7 +36,7 @@ cc.Class({
             data.orgi = cc.beimi.user.orgi;
             data.token = cc.beimi.authorization;
             this.ws.send(JSON.stringify(data));
-            console.log("[ws send] command:" + command + ",data:" + JSON.stringify(data))
+            console.log("[ws send] command:" + command + ", data:" + JSON.stringify(data))
         }
     },
     emit: function (command, data) {
