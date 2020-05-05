@@ -16,7 +16,7 @@ cc.Class({
             if (data != null && data.event != null) {
                 cc.beimi.event[data.event](event.data);
             }
-            console.log("[ws onmessage],data:" + event.data);
+            console.log("[ws onmessage] data:" + event.data);
         };
         this.ws.onerror = function (event) {
             console.log("[ws onerror]");
@@ -36,7 +36,7 @@ cc.Class({
             data.orgi = cc.beimi.user.orgi;
             data.token = cc.beimi.authorization;
             this.ws.send(JSON.stringify(data));
-            console.log("[ws send],command:" + command + ",data:" + JSON.stringify(data))
+            console.log("[ws send] command:" + command + ",data:" + JSON.stringify(data))
         }
     },
     emit: function (command, data) {
