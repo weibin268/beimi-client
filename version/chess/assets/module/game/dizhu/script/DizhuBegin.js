@@ -108,8 +108,6 @@ cc.Class({
         if(this.ready()) {
             let socket = this.socket();
 
-
-
             this.game = this.getCommon("DizhuDataBind");
 
             this.map("joinroom" , this.joinroom_event) ;          //加入房价
@@ -155,6 +153,10 @@ cc.Class({
                 orgi:cc.beimi.user.orgi,
                 extparams:cc.beimi.extparams
             } ;
+
+            //TODO:规则引擎需要用到该参数
+            param.extparams.games=1;
+
             socket.exec("joinroom" ,param) ;
 
             this.inited = true ;
@@ -167,8 +169,6 @@ cc.Class({
      * @param context
      */
     joinroom_event:function(data , context){
-
-        debugger
 
         if(data.cardroom == true && context.inviteplayer!=null){
             let script = context.invite.getComponent("BeiMiQR")
